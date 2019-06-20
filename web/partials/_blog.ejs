@@ -1,0 +1,109 @@
+<% truncateBlogPosts = false %> 
+
+<% if (params.length !== 0) { %>
+  <article class="blogpost blogpost--full" data-nosidebar>
+    <div class="blog-nav">
+      <a class="blog-nav-link" href="/blog">
+        <i class="fas fa-arrow-left"></i> Back to blog
+      </a>
+    </div>
+
+    <% try { %>
+      <% var index = blogposts.findIndex(post => post.slug == params[0]) %>
+      <% if (index === -1) { %>
+        <% throw Error('Post not found.') %>
+      <% } %>
+      <% var blogpost = blogposts[index] %>
+
+      <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://<%= serverConfig.PRIMARY_DOMAIN %>/blog/<%= blogpost.slug %>"
+          },
+          "headline": "<%= blogpost.title %>",
+          "image": [
+            <% if (blogpost.cover) { %>
+              "https://<%= serverConfig.PRIMARY_DOMAIN %><%= blogpost.cover %>"
+            <% } else if (blogpost.images && blogpost.images.length) { %>
+              <% blogpost.images.forEach((imagePath, index) => { %>
+                "https://<%= serverConfig.PRIMARY_DOMAIN %><%= imagePath %>"<%= (index < blogpost.images.length) ? ',' : '' %>
+              <% }) %> 
+            <% } %>
+           ],
+          "datePublished": "<%= (new Date(blogpost.published)).toISOString() %>",
+          "dateModified": "<%= (new Date(blogpost.published)).toISOString() %>",
+          "author": {
+            "@type": "Person",
+            "name": "<%= blogpost.author || 'Get Real Band' %>"
+          },
+           "publisher": {
+            "@type": "Organization",
+            "name": "Get Real!",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://<%= serverConfig.PRIMARY_DOMAIN %><%= blogpost.cover || '/images/web-cover.jpg' %>"
+            }
+          },
+          "description": "<%= util.getBlogpostDescription(blogpost) %>"
+        }
+      </script>
+
+      <h1>
+        <a href="/blog/<%= blogpost.slug %>">
+          Blog #<%= index + 1 %> — <%= blogpost.title %>
+        </a>
+        <a class="hash-link" href="/blog#<%= blogpost.slug %>">#</a>
+      </h1>
+      <h5>
+        Published by <%= blogpost.author || 'Get Real Band' %>
+        <span class="spacer">&bull;</span>
+        <%= util.formatDate(new Date(blogpost.published)) %>
+      </h5>
+      <%- util.renderMarkdownFile('data/blogposts/' + params[0] + '.md') %>
+    <% } catch (err) { %>
+      <% console.error(err) %>
+      The post could not be found.<br/>
+      <a href="/blog" data-hashlink>
+        Return to Blog
+      </a>
+    <% } %>
+  </article>
+
+<% } else { %>
+  <section data-nosidebar>
+    <% blogposts.forEach((blogpost, index) => { %>
+      <article id="<%= blogpost.slug %>" class="blogpost blogpost--preview">
+        <h1>
+          <a href="/blog/<%= blogpost.slug %>">
+            Blog #<%= index + 1 %> — <%= blogpost.title %>
+          </a>
+          <a class="hash-link" href="/blog#<%= blogpost.slug %>">#</a>
+        </h1>
+        <h5>
+          Published by <%= blogpost.author || 'Get Real Band' %>
+          <span class="spacer">&bull;</span>
+          <%= util.formatDate(new Date(blogpost.published)) %>
+        </h5>
+
+        <% if (truncateBlogPosts) { %> 
+          <% var truncatedContent = util.truncate(blogpost.content, 200) %>
+          <%- truncatedContent %>
+          <% if (truncatedContent.substring(truncatedContent.length - 3) === '...') { %>
+            <br/>
+            <div class="read-more-btn-container">
+              <a class="read-more-btn" href="/blog/<%= blogpost.slug %>" data-hashlink>
+                Read More
+              </a>
+            </div>
+          <% } %>
+        <% } else { %>
+          <%- blogpost.content %>
+        <% } %>
+
+      </article>
+    <% }) %>
+  </section>
+<% } %> 

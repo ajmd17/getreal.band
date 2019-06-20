@@ -1,0 +1,30 @@
+{
+  "name": "getreal.band",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://ajmd17@github.com/ajmd17/getreal.band.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ajmd17/getreal.band/issues"
+  },
+  "homepage": "https://github.com/ajmd17/getreal.band#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "html-to-text": "^5.1.1",
+    "markdown-it": "^10.0.0",
+    "markdown-it-attrs": "^3.0.1",
+    "markdown-it-video": "^0.6.3",
+    "marked": "^0.7.0",
+    "nodemailer": "^2.0.0"
+  }
+}

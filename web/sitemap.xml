@@ -1,0 +1,67 @@
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  <url>
+    <loc>https://getreal.band/</loc>
+    <changefreq>daily</changefreq>
+    <priority>1.00</priority>
+  </url>
+
+  <url>
+    <loc>https://getreal.band/releases</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <url>
+    <loc>https://getreal.band/releases/anger-management-ep</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://getreal.band/releases/bittersweet</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://getreal.band/lyrics/molotov</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.65</priority>
+  </url>
+
+  <url>
+    <loc>https://getreal.band/lyrics/seeing-red</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.65</priority>
+  </url>
+
+  <url>
+    <loc>https://getreal.band/lyrics/martyr</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.65</priority>
+  </url>
+
+  <url>
+    <loc>https://getreal.band/lyrics/bittersweet</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.65</priority>
+  </url>
+
+  <url>
+    <loc>https://getreal.band/contact</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://getreal.band/blog</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+  </url>
+
+  <url>
+    <loc>https://getreal.band/blog/the-initiation</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.75</priority>
+  </url>
+</urlset>

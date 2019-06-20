@@ -1,0 +1,11 @@
+<ul class="album-carousel">
+  <% releases.forEach((release, index) => { %>
+    <% var selected = (params.length > 0) ? params[0] === release.slug : index === 0 %>
+    <li>
+      <a href="/releases/<%= release.slug %>" class="<%= selected ? 'selected' : '' %>">
+        <img src="/images/releases/<%= release.artwork %>" alt="<%= release.title %> by Get Real band" />
+        <span class="link"><%= release.title %></span>
+      </a>
+    </li>
+  <% }) %>
+</ul>

@@ -1,0 +1,57 @@
+[
+  {
+    "title": "Anger Management EP",
+    "slug": "anger-management-ep",
+    "released": "November 5th, 2019",
+    "artwork": "am1.jpg",
+    "tracks": [
+      { "title": "Molotov", "slug": "molotov" },
+      { "title": "Seeing Red", "slug": "seeing-red" },
+      { "title": "Hold Me Down", "slug": "hold-me-down" },
+      { "title": "Martyr", "slug": "martyr" },
+      { "title": "Afterglow", "slug": "afterglow" }
+    ],
+    "channels": [
+      {
+        "name": "Spotify",
+        "url": "https://open.spotify.com/album/2V9kLZCwXlqGdOB3YnPpBA?si=wrU4RFHTRVeuWjRYdI4eGQ"
+      },
+      {
+        "name": "Google Play",
+        "url": "https://play.google.com/store/music/album?id=B4rvx6ltjvk3jtaqf7krzgynhwq&tid=song-Tcbb2b6hkzbmv67ghhqrboizpbi&hl=en"
+      },
+      {
+        "name": "Bandcamp",
+        "url": "http://getrealband.bandcamp.com/album/anger-management"
+      }
+    ]
+  },
+  {
+    "title": "Bittersweet",
+    "slug": "bittersweet",
+    "released": "August 15th, 2019",
+    "artwork": "bittersweet.jpg",
+    "channels": [
+      {
+        "name": "Spotify",
+        "url": "https://open.spotify.com/album/4v6VZxyMWhX7d3AaxnLYQu?si=KROfLtILSlizDr7iQS61Yg"
+      },
+      {
+        "name": "Apple Music",
+        "url": "https://music.apple.com/us/album/bittersweet/1476875221?i=1476875222&app=itunes&fbclid=IwAR0P8GVWtmedv1_AzQ88j8dkkSF-PFL35DF9-sqDC4tTumTtq0xnhzJUN6Q&ign-mpt=uo%3D4"
+      },
+      {
+        "name": "Google Play",
+        "url": "https://play.google.com/store/music/album/Get_Real_Bittersweet?id=Bny6tkpykoiemglrcxhjy63sqim&hl=en"
+      },
+      {
+        "name": "Soundcloud",
+        "url": "https://soundcloud.com/get_real_band/bittersweet"
+      },
+      {
+        "name": "Bandcamp",
+        "url": "http://getrealband.bandcamp.com/track/bittersweet"
+      }
+    ]
+  }
+]

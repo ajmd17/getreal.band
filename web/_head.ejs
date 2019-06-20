@@ -1,0 +1,39 @@
+<% if (process.env.NODE_ENV === 'production') { %>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-153842518-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-153842518-1');
+  </script>
+<% } %>
+
+
+<link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/css/styles.css">
+
+<% if (typeof coverPhoto === 'string') { %>
+  <link rel="image_src" href="<%= coverPhoto %>" />
+  <meta property="og:image" content="https://<%= serverConfig.PRIMARY_DOMAIN %><%= coverPhoto %>" />
+  <% } else { %>
+    <link rel="image_src" href="/images/web-cover.jpg" />
+    <meta property="og:image" content="https://<%= serverConfig.PRIMARY_DOMAIN %>/images/web-cover.jpg" />
+<% } %>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<% if (typeof pageTitle === 'string') { %>
+  <title>Get Real Band | <%= pageTitle %></title>
+<% } else { %>
+  <title>Get Real Band | Alt Rock band from Cape Breton</title>
+<% } %>
+
+<% if (typeof metaDescription === 'string') { %>
+  <meta name="description" content="<%= metaDescription %>" />
+  <meta name="og:description" content="<%= metaDescription %>" />
+<% } else { %>
+  <meta name="description" content="Get Real! is an alternative rock band from Sydney, Nova Scotia, Canada. In November 2019 we released our debut EP titled Anger Management. Contact us for show bookings." />
+  <meta name="og:description" content="Get Real! is an alternative rock band from Sydney, Nova Scotia, Canada. In November 2019 we released our debut EP titled Anger Management. Contact us for show bookings." />
+<% } %>

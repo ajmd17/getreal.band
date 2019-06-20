@@ -1,0 +1,22 @@
+<% if (params.length !== 0) { %>
+  <%- include('./lyrics/_lyric.ejs') %>
+
+<% } else { %>
+  <section data-nosidebar>
+    <% lyrics.forEach((lyric, index) => { %>
+      <article id="<%= lyric.slug %>" class="blogpost blogpost--preview">
+        <h1>
+          <a href="/lyrics/<%= lyric.slug %>">
+            <%= lyric.title %> Lyrics
+          </a>
+          <a class="hash-link" href="/lyrics#<%= lyric.slug %>">#</a>
+        </h1>
+
+        <%- lyric.content %>
+
+        <%- include('./lyrics/_links.ejs', { lyric }) %>
+
+      </article>
+    <% }) %>
+  </section>
+<% } %>

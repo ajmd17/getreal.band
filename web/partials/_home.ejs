@@ -1,0 +1,119 @@
+<section class="split-pane" data-viewmode="lander">
+  <div class="lander-img-wrapper">
+    <div id="play-box-wrapper" style="display: none;">
+      <div id="play-box">
+        <span>Listen to "Seeing Red" from <strong>Anger Management</strong></span>
+        <a id="play-button" data-viewmode="lander">
+          <i class="fas fa-play-circle"></i>
+        </a>
+        <span>
+          Available on:
+          <a target="_blank" href="https://open.spotify.com/album/2V9kLZCwXlqGdOB3YnPpBA?si=1lygAH8DQPq8iysbU0QTmg" class="play-link spotify">
+            <i class="fab fa-spotify fa-fw"></i>
+          </a>
+          <a target="_blank" href="https://play.google.com/store/music/album?id=B4rvx6ltjvk3jtaqf7krzgynhwq&tid=song-Tcbb2b6hkzbmv67ghhqrboizpbi&hl=en" class="play-link google-play">
+            <i class="fab fa-google-play fa-fw"></i>
+          </a>
+        </span>
+        
+      </div>
+    </div>
+    <div id="lander-img-wrapper" data-viewmode="lander">
+      <img src="/images/releases/am1.jpg" id="lander-img" alt="Anger Management EP by Get Real band">
+    </div>
+
+    <section class="releases-section">
+      <h1>Latest Releases</h1>
+      <ul class="releases small">
+        <% releases.forEach((release) => { %>
+          <a href="#releases">
+            <li>
+              <div class="release-wrapper">
+                <div class="artwork-block">
+
+                  <img src="/images/releases/<%= release.artwork %>" alt="<%= release.title %> by Get Real band" />
+                </div>
+                <div class="info">
+                  <h3><b><%= release.title %></b></h3>
+                  <h4><%= release.released %></h4>
+                </div>
+              </div>
+            </li>
+          </a>
+        <% }) %>
+      </ul>
+      <h4>
+        <a href="#releases" class="view-all-releases">
+          View all releases &gt;&gt;
+        </a>
+      </h4>
+    </section>
+  </div>
+
+  <section class="right-sections">
+    <section class="blogposts-section">
+      <h1>Latest Posts</h1>
+
+      <ul class="releases small">
+        <% blogposts.forEach((blogpost, index) => { %>
+          <a href="/blog/<%= blogpost.slug %>">
+            <li>
+              <div class="release-wrapper">
+                <% if (blogpost.images && blogpost.images.length) { %>
+                  <div class="artwork-block">
+                    <img src="<%= blogpost.images[0] %>" alt="<%= blogpost.title %>" />
+                  </div>
+                <% } %>
+                <div class="info">
+                  <h3>Blog #<%= index + 1 %> — <%= blogpost.title %></h3>
+                  <h4><%= util.formatDate(new Date(blogpost.published)) %></h4>
+                  <hr/>
+                  <div><%- util.truncate(blogpost.description, 200) %></div>
+                </div>
+              </div>
+            </li>
+          </a>
+        <% }) %>
+      </ul>
+      <h4>
+        <a href="#blog" class="view-all-releases">
+          View all posts &gt;&gt;
+        </a>
+      </h4>
+    </section>
+
+
+    <section class="about-section">
+      <div class="about-block">
+        <div class="">
+          <span>About the Band</span>
+        </div>
+      </div>
+      <div class="about-block">
+        <div class="">
+          <span>
+            Get Real! is a rock band from Sydney, Nova Scotia. Started in May 2019.
+            <br/>
+            Consists of members Andrew MacDonald (Vocals/Guitar), Drew Hawboldt (Drums), and Jeremy Devoe (Bass).
+          </span>
+        </div>
+      </div>
+      <div class="about-block">
+        <div class="">
+          <span>
+            On 2019/08/15 we released our debut single, <a class="link" href="https://getrealband.bandcamp.com/track/bittersweet" target="_blank">Bittersweet</a>.<br/>
+            You can find it on <a class="link" href="https://getrealband.bandcamp.com/track/bittersweet" target="_blank">Bandcamp</a>,
+            <a class="link" href="https://music.apple.com/us/artist/get-real/1476539962" target="_blank">Apple Music</a>,
+            <a class="link" href="https://open.spotify.com/track/0vgs1Q0noFpOisuqUUUop1?si=qYgS83k8QrqJ8_DxD3LO9A" target="_blank">Spotify</a>, and other streaming services.
+            <br/><br/>
+            On November 5th, 2019, we released our debut EP, <strong>Anger Management</strong>. It has five tracks and runs 20 minutes long.
+            You can find it on several streaming services - <a class="link" href="#releases">head over to our releases page</a> to listen to it online.<br/><br/>
+            We're also in the process of making some DIY physical copies, which we will be selling for $5 a pop (or PWYC!).
+            <br/>Shoot us a message if you're interested in picking up a copy when they're ready.
+          </span>
+        </div>
+      </div>
+    </section>
+    
+  </section>
+</section>

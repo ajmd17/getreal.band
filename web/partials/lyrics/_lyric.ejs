@@ -1,0 +1,38 @@
+<article class="blogpost blogpost--full" data-nosidebar>
+  <% if (typeof disableNavigation !== 'boolean' || !disableNavigation) { %>
+    <div class="blog-nav">
+      <a class="blog-nav-link" href="/lyrics">
+        <i class="fas fa-arrow-left"></i> View all lyrics
+      </a>
+    </div>
+  <% } %>
+
+  <% try { %>
+    <% var index = lyrics.findIndex(post => post.slug == params[0]) %>
+    <% if (index === -1) { %>
+      <% throw Error('Lyrics not found.') %>
+    <% } %>
+    <% var lyric = lyrics[index] %>
+
+    <h1>
+      <a href="/lyrics/<%= lyric.slug %>">
+        <%= lyric.title %> Lyrics
+      </a>
+      <a class="hash-link" href="/lyrics#<%= lyric.slug %>">#</a>
+    </h1>
+
+    <%- lyric.content %>
+
+    <%- include('./_links.ejs', { lyric }) %>
+
+  <% } catch (err) { %>
+    <% console.error(err) %>
+    The lyrics could not be found.<br/>
+
+    <% if (typeof disableNavigation !== 'boolean' || !disableNavigation) { %>
+      <a href="/lyrics" data-hashlink>
+        Return to Lyrics
+      </a>
+    <% } %>
+  <% } %>
+</article>

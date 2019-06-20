@@ -1,0 +1,11 @@
+<% if (lyric.links && Object.keys(lyric.links).length != 0) { %>
+  <hr/>
+  <div class="bottom-links">
+    View lyrics on:
+    <% Object.keys(lyric.links).forEach((site) => { %>
+      <a class="link" href="<%= lyric.links[site] %>">
+        <%= site %>
+      </a>&nbsp;&nbsp;
+    <% }) %>
+  </div>
+<% } %>

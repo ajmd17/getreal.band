@@ -1,0 +1,41 @@
+<div class="album">
+  <% var release = releases.find(r => r.slug === params[0]) || releases[0] %>
+
+  
+  <h1><%= release.title %></h1>
+  <h4><%= release.released %></h4>
+  <hr/>
+  <div class="split-pane">
+    <div class="album-artwork">
+      <img src="/images/releases/<%= release.artwork %>" alt="<%= release.title %> by Get Real band" />
+      
+      <div class="channels">
+        <% release.channels.forEach((channel) => { %>
+          <a href="<%= channel.url %>" class="play-link <%= util.playLinkIcon(channel) %>">
+            <i class="fab fa-<%= util.playLinkIcon(channel) %> fa-fw"></i>
+            Play on <%= channel.name %>
+          </a>
+        <% }) %>
+      </div>
+    </div>
+    <div class="track-listing">
+      <% if (release.tracks && release.tracks.length) { %>
+        <ul class="tracks">
+          <% release.tracks.forEach((track, index) => { %>
+            <li>
+              <span><b><%= index + 1 %>.</b> <%= track.title %></span>
+              <span class="spacer"></span>
+              <span>
+                <a class="link <%= lyrics.findIndex(lyric => lyric.slug === track.slug) === -1 ? 'disabled' : '' %>" href="/lyrics/<%= track.slug %>">
+                  View Lyrics
+                </a>
+              </span>
+            </li>
+          <% }) %>
+        </ul>
+      <% } else { %>
+        <%- include('../lyrics/_lyric.ejs', { disableNavigation: true }) %>
+      <% } %>
+    </div>
+  </div>
+</div>

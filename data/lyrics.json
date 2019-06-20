@@ -1,0 +1,30 @@
+[
+  {
+    "title": "Molotov",
+    "slug": "molotov",
+    "links": {
+      "Genius": "https://genius.com/Get-real-band-molotov-lyrics"
+    }
+  },
+  {
+    "title": "Seeing Red",
+    "slug": "seeing-red",
+    "links": {
+      "Genius": "https://genius.com/Get-real-band-seeing-red-lyrics"
+    }
+  },
+  {
+    "title": "Martyr",
+    "slug": "martyr",
+    "links": {
+      "Genius": "https://genius.com/Get-real-band-martyr-lyrics"
+    }
+  },
+  {
+    "title": "Bittersweet",
+    "slug": "bittersweet",
+    "links": {
+      "Genius": "https://genius.com/Get-real-band-bittersweet-lyrics"
+    }
+  }
+]
