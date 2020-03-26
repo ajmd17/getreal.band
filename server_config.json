@@ -1,7 +1,7 @@
 {
-  "SSL_CA": "",
-  "SSL_KEY": "",
-  "SSL_CERT": "",
+  "SSL_CA": "certs/getreal_band.ca-bundle",
+  "SSL_KEY": "certs/getreal_band.key",
+  "SSL_CERT": "certs/getreal_band.crt",
   "PRIMARY_DOMAIN": "getreal.band",
 
   "MAILER_ADDRESS": "",

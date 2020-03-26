@@ -54,6 +54,17 @@ app
     }
   })
 })
+.get('/ep2', (req, res, next) => {
+  ejs.renderFile(path.join(__dirname, 'web', 'twiof.ejs'), {}, (err, str) => {
+    if (err) {
+      next()
+      res.status(500).send('Server error')
+      console.error('Server error: ', err)
+    } else {
+      res.send(str)
+    }
+  })
+})
 .get('/', (req, res, next) => {
   const urlComponents = /\/?([A-Za-z0-9-_]+)(?:\/([A-Za-z0-9-_]*))?/.exec(req.originalUrl),
     partialName = 'home',

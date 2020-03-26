@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      .center {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        background: #fff;
+        /* background: black; */
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        /* background-image: radial-gradient(
+          rgba(30,30,30, 0.75), black 120%
+        );
+        text-shadow: 0 0 9px #c6d5d5; */
+        
+      }
+
+      /* .center::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: repeating-linear-gradient(
+          0deg,
+          rgba(0, 0, 0, 0.15),
+          rgba(0, 0, 0, 0.15) 1px,
+          transparent 1px,
+          transparent 2px
+        );
+        pointer-events: none;
+      } */
+
+      .text {
+        font-family: 'Times New Roman';
+        /* font-family: "LCD2"; */
+        /* font-style: italic; */
+        font-size: 120px;
+        border: none;
+        text-align: center;
+        color: black;
+        /* color: #e4f3f3; */
+        outline: none;
+        text-align: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      .text > .caret {
+        position: relative;
+        width: 3px;
+        height: 108px;
+        margin-left: 20px;
+        margin-top: 10px;
+        background: #000;
+        z-index: 10;
+        /* margin-left: 40px; */
+        /* margin-top: 1px; */
+        /* padding-bottom: 1px; */
+        /* background: #eee; */
+        /* transform: skewX(-18deg); */
+        /* box-shadow: 0 0 5px #C8C8C8; */
+      }
+
+      .text > .caret.blinking {
+        animation-name: blinking-caret;
+        animation-duration: 1.5s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+      }
+
+      @keyframes blinking-caret {
+        0% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0;
+        }
+        80%, 90%, 100% {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="center">
+      <div class="text">
+        <div id="text-content">The world is on fire.</div>
+        <div id="text-below"></div>
+        <span class="caret"></span>
+      </div>
+    </div>
+
+
+    <script>
+      document.addEventListener('DOMContentLoaded',function(event){
+      // type one text in the typwriter
+      // keeps calling itself until the text is finished
+      function typeWriter(text, element, i, fnCallback) {
+        // chekc if text isn't finished yet
+        if (i < (text.length)) {
+          // add next character to h1
+          element.innerHTML = text.substring(0, i+1) +'<span aria-hidden="true"></span>';
+
+          // wait for a while and call this function again for next character
+          setTimeout(function() {
+            typeWriter(text, element, i + 1, fnCallback)
+          }, 100);
+        } else if (typeof fnCallback == 'function') {
+          // call callback after timeout
+          setTimeout(fnCallback, 100);
+        }
+      }
+      typeWriter('The world is on fire.', document.getElementById('text-content'), 0, function() {
+        document.querySelector('.text .caret').classList.add('blinking')
+
+        // setTimeout(() => {
+        //   typeWriter('An EP by: Get Real!', document.getElementById('text-below'), 0, () => {
+
+        //   })
+        // }, 400)
+      });
+    });
+    </script>
+  </body>
+</html>
