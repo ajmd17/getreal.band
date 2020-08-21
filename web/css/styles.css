@@ -57,7 +57,7 @@ body {
 .menu .items {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 .center-footer {
@@ -88,6 +88,14 @@ body {
   letter-spacing: initial;
 }
 
+.main-hero {
+  display: flex;
+  padding-top: 20px;
+  padding-bottom: 50px;
+  justify-content: center;
+
+}
+
 .split-pane {
   display: flex;
   flex-direction: row;
@@ -108,8 +116,12 @@ body {
   margin-left: 30px;
 }
 
-.releases-section {
-  margin-top: 10px;
+.upcoming {
+  color: #f65912;
+}
+
+.video-section {
+  overflow: hidden;
 }
 
 .link,
@@ -137,7 +149,7 @@ article.blogpost a:not(.disabled):not(.blog-nav-link):not(.hash-link):hover {
   color: #000;
 }
 .about-section .about-block {
-  margin: 30px 0;
+  margin-bottom: 15px;
 }
 /* .about-section .about-block a {
   color: #000;
@@ -199,10 +211,17 @@ article.blogpost a:not(.disabled):not(.blog-nav-link):not(.hash-link):hover {
   padding: 25px 35px;
   user-select: none;
 }
-.menu .home-link {
-  margin-right: 130px;
+.menu .home-link-mobile {
+  display: none;
+  padding-bottom: 20px;
 }
-.menu .nav-logo {
+.menu .home-link-desktop {
+  margin-right: 180px;
+}
+.menu .home-link-mobile .nav-logo {
+  height: 50px;
+}
+.menu .home-link-desktop .nav-logo {
   height: 70px;
   margin-top: -8px;
   position: absolute;
@@ -212,6 +231,9 @@ article.blogpost a:not(.disabled):not(.blog-nav-link):not(.hash-link):hover {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+.menu .site-links a {
+  padding: 0 10px;
 }
 .menu .spacer-lander {
   flex: 0.5;
@@ -630,17 +652,20 @@ article.blogpost a:not(.disabled):not(.blog-nav-link):not(.hash-link):hover {
 .releases.small li .artwork-block {
 }
 
-.view-all-releases {
+.view-all {
   display: block;
   padding: 10px 0;
   text-align: center;
-  color: #fff;
-  background: #222;
   text-transform: uppercase;
   font-size: 20px;
   text-decoration: none;
 }
-.view-all-releases:hover {
+.view-all > span {
+  color: #fff;
+  background: #222;
+  padding: 3px 8px;
+}
+.view-all:hover span {
   text-decoration: underline;
 }
 
@@ -825,10 +850,13 @@ article.blogpost .bottom-links {
     max-width: 200px;
   }
 
-  .center-menu {
-    width: 100%;
+  .menu .home-link-desktop {
+    display: none;
   }
-
+  .menu .home-link-mobile {
+    display: flex;
+    justify-content: center;
+  }
   .menu .items .spacer-lander {
     display: none;
   }

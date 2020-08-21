@@ -1,10 +1,25 @@
 const path = require('path')
+const moment = require('moment')
 const htmlToText = require('html-to-text')
 
 const util = require('../util')
 
 module.exports = {
-  releases: require('./releases.json'),
+  INDEX_LOGO: '/images/logo-red.png',
+
+  releases: require('./releases.json').map((release) => {
+    let upcoming = false
+
+    try {
+      upcoming = moment().diff(moment(release.released, 'MMMM DD, YYYY'), 'days') <= 0
+    } catch (err) {
+      console.error(err)
+    }
+
+    return Object.assign({
+      upcoming
+    }, release)
+  }),
   blogposts: require('./blogposts.json').map((blogpost) => {
     return Object.assign({
       content: util.renderMarkdownFile(path.join(__dirname, 'blogposts', blogpost.slug + '.md')),

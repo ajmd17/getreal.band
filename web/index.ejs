@@ -11,16 +11,14 @@
       <img src="/images/web-cover.jpg" style="display: none;" />
     <% } %>
     <div id="main-container">
-      <div id="dz">
-        <div>
-          Daisy, Daisy, give me your answer do. I'm half crazy all for the love of you. It won't be a stylish marriage, I can't afford a carriage. But you'll look sweet upon the seat of a bicycle built for <a href="/teaser">two</a>.
-        </div>
-      </div>
       <div id="main-menu" class="menu">
+        <a href="/home" data-hashlink class="home-link-mobile">
+          <img class="nav-logo" src="<%= INDEX_LOGO %>">
+        </a>
         <div class="items">
           <div class="site-links">
-            <a href="/home" data-hashlink class="home-link">
-              <img class="nav-logo" src="/images/logo-red.png">
+            <a href="/home" data-hashlink class="home-link-desktop">
+              <img class="nav-logo" src="<%= INDEX_LOGO %>">
             </a>
             <a href="/releases" data-hashlink>Releases</a>
             <a href="/blog" data-hashlink>Blog</a>
@@ -35,13 +33,6 @@
         </div>
       </div>
       <div class="center-menu">
-        <!-- <header id="nav-logo">
-          <a href="/">
-            <img class="logo" alt="Get Real band logo" src="/images/logo-red.png"/>
-          </a>
-
-          
-        </header> -->
 
         <div id="content">
           <% if (typeof content === 'string') { %>

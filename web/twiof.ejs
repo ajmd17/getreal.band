@@ -11,8 +11,15 @@
         width: 100%;
         height: 100%;
         display: flex;
+        box-sizing: border-box;
         background: #fff;
         /* background: black; */
+        background: #F58873;
+        background: #E0251B;
+        background: #3B2A8A;
+        background: #650AE8;
+        /* background: white; */
+        /* border: 100px solid white; */
         flex-direction: row;
         align-items: center;
         justify-content: center;
@@ -41,13 +48,59 @@
       } */
 
       .text {
+
+        /* background: rgb(204, 0, 0); */
+      }
+
+      .text span {
+        box-sizing: content-box;
+        color: white;
+        /* background: white; */
+        padding-bottom: 15px;
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-top: 0px;
+        /* border-bottom: none !important; */
+      }
+      .text span:nth-child(1) {
+        border-bottom: 15px solid rgb(0, 0, 0);
+        /* border-top: 15px solid rgb(204, 204, 204); */
+      }
+      .text span:nth-child(2) {
+        border-bottom: 15px solid rgb(51, 0, 0);
+        /* border-top: 15px solid rgb(153, 153, 153); */
+      }
+      .text span:nth-child(3) {
+        border-bottom: 15px solid rgb(102, 0, 0);
+        /* border-top: 15px solid rgb(102, 102, 102); */
+      }
+      .text span:nth-child(4) {
+        border-bottom: 15px solid rgb(153, 0, 0);
+        /* border-top: 15px solid rgb(51, 51, 51); */
+      }
+      .text span:nth-child(5) {
+        border-bottom: 15px solid rgb(204, 0, 0);
+        /* border-top: 15px solid rgb(0, 0, 0); */
+      }
+      /* .text span:nth-child(2),
+      .text span:nth-child(4) {
+        color: black;
+        background: white;
+      } */
+
+      .text {
         font-family: 'Times New Roman';
+        font-family: "Futura";
+        font-variant: all-small-caps;
+        padding: 20px;
         /* font-family: "LCD2"; */
         /* font-style: italic; */
-        font-size: 120px;
+        font-size: 160px;
         border: none;
         text-align: center;
-        color: black;
+        color: white;
+        letter-spacing: 0.07em;
+        /* color: #fff; */
         /* color: #e4f3f3; */
         outline: none;
         text-align: center;
@@ -56,12 +109,19 @@
         justify-content: center;
       }
 
-      .text > .caret {
-        position: relative;
+      #text-content {
+        margin-top: -24px;
+      }
+
+      #text-content::after {
+        display: none;
+
+        content: '';
+        position: absolute;
         width: 3px;
-        height: 108px;
+        height: 130px;
         margin-left: 20px;
-        margin-top: 10px;
+        margin-top: 25px;
         background: #000;
         z-index: 10;
         /* margin-left: 40px; */
@@ -72,11 +132,11 @@
         /* box-shadow: 0 0 5px #C8C8C8; */
       }
 
-      .text > .caret.blinking {
-        animation-name: blinking-caret;
+      #text-content.blinking::after {
+        /* animation-name: blinking-caret;
         animation-duration: 1.5s;
         animation-timing-function: linear;
-        animation-iteration-count: infinite;
+        animation-iteration-count: infinite; */
       }
 
       @keyframes blinking-caret {
@@ -95,34 +155,35 @@
   <body>
     <div class="center">
       <div class="text">
-        <div id="text-content">The world is on fire.</div>
+        <div id="text-content">
+
+          <span>The</span>
+          <span>world</span>
+          <span>is</span>
+          <span>on</span>
+          <span>fire</span>
+        </div>
         <div id="text-below"></div>
-        <span class="caret"></span>
       </div>
     </div>
 
 
     <script>
+      throw 'blah';
       document.addEventListener('DOMContentLoaded',function(event){
-      // type one text in the typwriter
-      // keeps calling itself until the text is finished
       function typeWriter(text, element, i, fnCallback) {
-        // chekc if text isn't finished yet
         if (i < (text.length)) {
-          // add next character to h1
           element.innerHTML = text.substring(0, i+1) +'<span aria-hidden="true"></span>';
 
-          // wait for a while and call this function again for next character
           setTimeout(function() {
             typeWriter(text, element, i + 1, fnCallback)
           }, 100);
         } else if (typeof fnCallback == 'function') {
-          // call callback after timeout
           setTimeout(fnCallback, 100);
         }
       }
-      typeWriter('The world is on fire.', document.getElementById('text-content'), 0, function() {
-        document.querySelector('.text .caret').classList.add('blinking')
+      typeWriter('The world is on fire', document.getElementById('text-content'), 0, function() {
+        document.getElementById('text-content').classList.add('blinking')
 
         // setTimeout(() => {
         //   typeWriter('An EP by: Get Real!', document.getElementById('text-below'), 0, () => {

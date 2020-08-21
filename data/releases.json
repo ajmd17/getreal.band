@@ -1,8 +1,60 @@
 [
   {
-    "title": "Anger Management EP",
+    "title": "Seasick Hotel (Album)",
+    "slug": "seasick-hotel",
+    "released": "September 8, 2020",
+    "artwork": "sh.jpg",
+    "tracks": [
+      { "title": "The Motions", "slug": "the-motions" },
+      { "title": "Makes Me Sick", "slug": "makes-me-sick" },
+      { "title": "Sweet Talk", "slug": "sweet-talk" },
+      { "title": "Burning Bridges", "slug": "burning-bridges" },
+      { "title": "Lifelines", "slug": "lifelines" },
+      { "title": "King of Vultures", "slug": "king-of-vultures" },
+      { "title": "Sucker Punch", "slug": "sucker-punch" },
+      { "title": "Look the Other Way", "slug": "look-the-other-way" },
+      { "title": "Deer in Headlights", "slug": "deer-in-headlights" }
+      
+    ],
+    "channels": [
+      {
+        "name": "Bandcamp",
+        "url": "http://getrealband.bandcamp.com/album/seasick-hotel"
+      }
+    ]
+  },
+  {
+    "title": "Sweet Talk (Single)",
+    "slug": "sweet-talk",
+    "released": "August 21, 2020",
+    "artwork": "sh.jpg",
+    "channels": [
+      {
+        "name": "Bandcamp",
+        "url": "http://getrealband.bandcamp.com/track/sweet-talk"
+      }
+    ]
+  },
+  {
+    "title": "Sucker Punch (Single)",
+    "slug": "sucker-punch",
+    "released": "May 21, 2020",
+    "artwork": "sp.jpg",
+    "channels": [
+      {
+        "name": "Spotify",
+        "url": "https://open.spotify.com/track/6awxbZ4Xj9HURAezYjLbBz?si=Bm0XhmfJRH-bmADTnoacRg"
+      },
+      {
+        "name": "Bandcamp",
+        "url": "http://getrealband.bandcamp.com/track/sucker-punch"
+      }
+    ]
+  },
+  {
+    "title": "Anger Management (EP)",
     "slug": "anger-management-ep",
-    "released": "November 5th, 2019",
+    "released": "November 5, 2019",
     "artwork": "am1.jpg",
     "tracks": [
       { "title": "Molotov", "slug": "molotov" },
@@ -27,9 +79,9 @@
     ]
   },
   {
-    "title": "Bittersweet",
+    "title": "Bittersweet (Single)",
     "slug": "bittersweet",
-    "released": "August 15th, 2019",
+    "released": "August 15, 2019",
     "artwork": "bittersweet.jpg",
     "channels": [
       {
