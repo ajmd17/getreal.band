@@ -54,11 +54,11 @@ function landerMode() {
   let mainContainer = document.getElementById('main-container')
   mainContainer.classList.add('landing')
 
-  if (!PlayBox.initialized) {
-    PlayBox.initialize()
-  }
+  // if (!PlayBox.initialized) {
+  //   PlayBox.initialize()
+  // }
 
-  PlayBox.show()
+  // PlayBox.show()
 
   afterPageInitialization()
 }
@@ -69,9 +69,9 @@ function pagerMode() {
 
   mainContainer.classList.remove('landing')
 
-  if (PlayBox.initialized) {
-    PlayBox.hide()
-  }
+  // if (PlayBox.initialized) {
+  //   PlayBox.hide()
+  // }
 
   afterPageInitialization()
 }
@@ -202,6 +202,6 @@ window.addEventListener('hashchange', updateHashState)
 window.addEventListener('load', function () {
   updateHashState()
 })
-window.addEventListener('resize', () => {
-  PlayBox.update()
-})
+// window.addEventListener('resize', () => {
+//   PlayBox.update()
+// })
