@@ -197,7 +197,8 @@ function renderIndexPage(req, res, next, { urlComponents, partialName, paramsStr
 
       return {
         pageTitle: pageTitle,
-        metaDescription: util.truncate(itemContent.trim().replace(/\n+/g, ' / '), 250)
+        metaDescription: util.truncate(itemContent.trim().replace(/\n+/g, ' / '), 250),
+        coverPhoto: item.cover
       }
     } else if (page === 'contact') {
       return {

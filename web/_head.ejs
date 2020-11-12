@@ -17,9 +17,9 @@
 <% if (typeof coverPhoto === 'string') { %>
   <link rel="image_src" href="<%= coverPhoto %>" />
   <meta property="og:image" content="https://<%= serverConfig.PRIMARY_DOMAIN %><%= coverPhoto %>" />
-  <% } else { %>
-    <link rel="image_src" href="/images/web-cover.jpg" />
-    <meta property="og:image" content="https://<%= serverConfig.PRIMARY_DOMAIN %>/images/web-cover.jpg" />
+<% } else { %>
+  <link rel="image_src" href="/images/web-cover.jpg" />
+  <meta property="og:image" content="https://<%= serverConfig.PRIMARY_DOMAIN %>/images/web-cover.jpg" />
 <% } %>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
