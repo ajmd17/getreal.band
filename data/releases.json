@@ -1,5 +1,21 @@
 [
   {
+    "title": "My Haunting (Single)",
+    "slug": "my-haunting",
+    "released": "Oct 20, 2020",
+    "artwork": "mh.jpg",
+    "channels": [
+      {
+        "name": "Spotify",
+        "url": "https://open.spotify.com/track/5T2GSS7IXRczyU0CfLHygQ?si=OAutmSc-RNaiH61jmTa7xg"
+      },
+      {
+        "name": "Bandcamp",
+        "url": "http://getrealband.bandcamp.com/track/my-haunting"
+      }
+    ]
+  },
+  {
     "title": "Seasick Hotel (Album)",
     "slug": "seasick-hotel",
     "released": "September 8, 2020",
@@ -20,18 +36,6 @@
       {
         "name": "Bandcamp",
         "url": "http://getrealband.bandcamp.com/album/seasick-hotel"
-      }
-    ]
-  },
-  {
-    "title": "Sweet Talk (Single)",
-    "slug": "sweet-talk",
-    "released": "August 21, 2020",
-    "artwork": "sh.jpg",
-    "channels": [
-      {
-        "name": "Bandcamp",
-        "url": "http://getrealband.bandcamp.com/track/sweet-talk"
       }
     ]
   },
