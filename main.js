@@ -186,7 +186,7 @@ function renderIndexPage(req, res, next, { urlComponents, partialName, paramsStr
 
         if (item != null) {
           try {
-            itemContent = htmlToText.fromString(util.renderMarkdownFile(path.join(__dirname, 'data', 'merch', item.slug + '.md')))
+            itemContent = util.getTruncatedContent(util.renderMarkdownFile(path.join(__dirname, 'data', 'merch', item.slug + '.md')))
           } catch (err) {
             // no-op
           }
