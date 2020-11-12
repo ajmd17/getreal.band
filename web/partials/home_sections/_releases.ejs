@@ -1,0 +1,42 @@
+<section class="releases-section">
+  <h1>Latest Releases</h1>
+  <ul class="releases small">
+    <% releases.forEach((release) => { %>
+      <li>
+        <div class="release-wrapper">
+          <div class="artwork-block">
+
+            <img src="/images/releases/<%= release.artwork %>" alt="<%= release.title %> by Get Real band" />
+          </div>
+          <div class="info">
+            <a href="#releases">
+              <h3><b><%= release.title %></b></h3>
+            </a>
+            <h4>
+              <% if (release.upcoming) { %>
+                <i class="upcoming">
+                  Upcoming:&nbsp;
+              <% } %>
+              <%= release.released %>
+              <% if (release.upcoming) { %>
+                </i>
+              <% } %>
+
+              <% if (release.merch) { %>
+                <hr/>
+                <a class="accent" href="/merch/<%= release.merch %>">
+                  Physical options available!
+                </a>
+              <% } %>
+            </h4>
+          </div>
+        </div>
+      </li>
+    <% }) %>
+  </ul>
+  <h4>
+    <a href="#releases" class="view-all">
+      <span>View all releases &gt;&gt;</span>
+    </a>
+  </h4>
+</section>

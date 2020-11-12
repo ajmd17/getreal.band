@@ -1,5 +1,5 @@
 
-![Physical CD copies](/images/seasick-hotel-cd/cd2.jpg "Physical CD copies"){.align-img-left}{width=200}
+![Physical CD copies](/images/seasick-hotel-cd/cd2.jpg "Physical CD copies"){.align-img-left.mobile-no-align}{width=200}
 
 Our first full-length album Seasick Hotel was released on September 8th (2020) and we're pleased to say that we have physical CD copies available! They come in a CD jacket complete with original artwork by [@crowsomen](https://instagram.com/crowsomen).
 
@@ -15,7 +15,10 @@ They are $12 (CAD) each. We can ship them to you as well, but you'll have to let
 
   <input type="hidden" name="namespace" value="merch" data-form-field/>
 
-  <label for="email-box">Email Address*</label>
+  <label for="full-name">Full name*</label>
+  <input type="text" name="name" id="full-name" data-form-field="required"/>
+
+  <label for="email-box">Email address*</label>
   <input type="email" name="email" id="email-box"/>
 
   <label for="country">Country*</label>
@@ -70,7 +73,7 @@ They are $12 (CAD) each. We can ship them to you as well, but you'll have to let
   <textarea rows="3" cols="3" name="message" id="message-box" data-form-field></textarea>
 
   <div class="form-bottom">
-    <button id="contact-button">
+    <button id="contact-button" class="button">
       Submit
     </button>
   </div>

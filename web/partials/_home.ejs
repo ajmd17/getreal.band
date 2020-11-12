@@ -4,41 +4,11 @@
 
 <section class="split-pane" data-viewmode="lander">
   <div class="lander-img-wrapper">
-    <section class="releases-section">
-      <h1>Latest Releases</h1>
-      <ul class="releases small">
-        <% releases.forEach((release) => { %>
-          <a href="#releases">
-            <li>
-              <div class="release-wrapper">
-                <div class="artwork-block">
 
-                  <img src="/images/releases/<%= release.artwork %>" alt="<%= release.title %> by Get Real band" />
-                </div>
-                <div class="info">
-                  <h3><b><%= release.title %></b></h3>
-                  <h4>
-                    <% if (release.upcoming) { %>
-                      <i class="upcoming">
-                        Upcoming:&nbsp;
-                    <% } %>
-                    <%= release.released %>
-                    <% if (release.upcoming) { %>
-                      </i>
-                    <% } %>
-                  </h4>
-                </div>
-              </div>
-            </li>
-          </a>
-        <% }) %>
-      </ul>
-      <h4>
-        <a href="#releases" class="view-all">
-          <span>View all releases &gt;&gt;</span>
-        </a>
-      </h4>
-    </section>
+
+    <div class="desktop-only">
+      <%- include('./home_sections/_releases.ejs') %>
+    </div>
 
 
     <!-- <section class="blogposts-section">
@@ -74,34 +44,36 @@
   </div>
 
   <section class="right-sections">
+
+
     <section class="video-section">
       <iframe width="560" height="315" src="https://www.youtube.com/embed/tyHfvjUXxiA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </section>
 
+    <div class="mobile-only">
+      <%- include('./home_sections/_merch.ejs') %>
+      <%- include('./home_sections/_releases.ejs') %>
+    </div>
+
     <section class="about-section">
       <div class="about-block">
         <div class="">
-          <span>About the Band</span>
+          <span>About the band</span>
         </div>
       </div>
       <div class="about-block">
         <div class="">
           <span>
-            Get Real! is an alternative rock band formed in Sydney, Nova Scotia.
-            <br/>
-            Currently consists of members Andrew MacDonald (Vocals/Guitar), Drew Hawboldt (Drums), and Jeremy Devoe (Bass).
-          </span>
-        </div>
-      </div>
-      <div class="about-block">
-        <div class="">
-          <span>
-            Our full-length album <strong>Seasick Hotel</strong> releases <strong>September 8th, 2020</strong>.<br/>
-            Physical cd copies will be available.
+            Get Real! is an alternative rock band formed in Sydney, Nova Scotia. Members: <b>Andrew MacDonald</b> (Vocals/Guitar), <b>Cyrus R.O</b> (Guitar), <b>Drew Hawboldt</b> (Drums), and <b>Jeremy Devoe</b> (Bass).
           </span>
         </div>
       </div>
     </section>
+
+    <div class="desktop-only">
+      <%- include('./home_sections/_merch.ejs') %>
+    </div>
+    
     
   </section>
 </section>

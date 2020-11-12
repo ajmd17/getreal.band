@@ -1,0 +1,35 @@
+<section class="blogposts-section">
+  <h1>Merch</h1>
+
+  <ul class="releases small">
+    <% merchItems.forEach((item, index) => { %>
+      <li>
+        <div class="release-wrapper">
+          <% if (item.previewImg) { %>
+            <div class="artwork-block">
+              <img src="/images/<%= item.slug %>/<%= item.previewImg %>" alt="<%= item.title %>" />
+            </div>
+          <% } %>
+          <div class="info">
+            <a href="/merch/<%= item.slug %>">
+              <h3><%= item.title %></h3>
+            </a>
+            <hr/>
+            <div>
+              <%- util.getTruncatedContent(util.renderMarkdownFile('data/merch/' + item.slug + '.md'), 150) %>
+
+              <a href="/merch/<%= item.slug %>">
+                Read more
+              </a>
+            </div>
+          </div>
+        </div>
+      </li>
+    <% }) %>
+  </ul>
+  <h4>
+    <a href="#merch" class="view-all">
+      <span>View all merch &gt;&gt;</span>
+    </a>
+  </h4>
+</section>

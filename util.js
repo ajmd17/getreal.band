@@ -66,7 +66,10 @@ module.exports = {
   },
 
   getTruncatedContent(content, length = 250) {
-    return this.truncate(htmlToText.fromString(content), length)
+    return this.truncate(htmlToText.fromString(content, {
+      ignoreHref: true,
+      ignoreImage: true
+    }), length)
   },
 
   playLinkIcon(channel) {

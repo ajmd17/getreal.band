@@ -9,6 +9,10 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+.mobile-only {
+  display: none;
+}
+
 #dz {
   position: fixed;
   bottom: 0;
@@ -114,6 +118,7 @@ body {
 }
 .split-pane > .right-sections {
   margin-left: 30px;
+  flex: 1;
 }
 
 .upcoming,
@@ -127,6 +132,9 @@ a.accent {
 
 .video-section {
   overflow: hidden;
+}
+.video-section > iframe {
+  width: 100%;
 }
 
 .link,
@@ -189,7 +197,9 @@ article.blogpost a:not(.disabled):not(.blog-nav-link):not(.hash-link):hover {
 #lander-img {
   width: 450px;
 }
-#lander-img-wrapper {
+.lander-img-wrapper {
+  flex: 0;
+  min-width: 450px;
   display: inline-block;
   transition: filter 1s linear;
 }
@@ -212,7 +222,7 @@ article.blogpost a:not(.disabled):not(.blog-nav-link):not(.hash-link):hover {
   background: #111;
   color: #ddd;
   text-transform: uppercase;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   padding: 25px 35px;
   user-select: none;
 }
@@ -473,6 +483,7 @@ article.blogpost a:not(.disabled):not(.blog-nav-link):not(.hash-link):hover {
   text-transform: uppercase;
   text-decoration: none;
   transition: background-color 0.3s ease;
+  white-space: nowrap;
 }
 .button:hover {
   background: #789BEA;
@@ -873,7 +884,29 @@ article.blogpost .blogpost__preview > img {
 }
 
 @media (max-width: 768px) {
+  .mobile-only {
+    display: block;
+  }
+  .desktop-only {
+    display: none;
+  }
 
+
+  .albums .album .album__header {
+    flex-direction: column;
+  }
+
+
+  article.blogpost .mobile-no-align {
+    float: none !important;
+  }
+
+  article.blogpost .blogpost__preview > img {
+    width: 180px;
+  }
+  article.blogpost .blogpost__content {
+    flex-direction: column;
+  }
 
   #nav-logo img.logo {
     max-width: 200px;
@@ -907,6 +940,7 @@ article.blogpost .blogpost__preview > img {
   .menu {
     font-size: 20px;
     padding: 25px 0;
+    margin-bottom: 5px;
   }
 
   .left {
@@ -921,7 +955,7 @@ article.blogpost .blogpost__preview > img {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 30px;
+    min-width: initial;
   }
   .split-pane > .right-sections {
     margin-left: 0;
