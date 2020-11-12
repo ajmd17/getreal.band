@@ -179,7 +179,8 @@ function renderIndexPage(req, res, next, { urlComponents, partialName, paramsStr
       }
     } else if (page === 'merch') {
       let itemContent = 'Buy Get Real! band merchandise',
-          pageTitle = 'Merch'
+          pageTitle = 'Merch',
+          coverPhoto
 
       if (params.length > 0) {
         let item = require('./data/merch.json').find(obj => obj.slug == params[0])
@@ -192,13 +193,14 @@ function renderIndexPage(req, res, next, { urlComponents, partialName, paramsStr
           }
 
           pageTitle = item.title
+          coverPhoto = item.cover
         }
       }
 
       return {
         pageTitle: pageTitle,
         metaDescription: util.truncate(itemContent.trim().replace(/\n+/g, ' / '), 250),
-        coverPhoto: item.cover
+        coverPhoto
       }
     } else if (page === 'contact') {
       return {
