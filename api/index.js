@@ -3,6 +3,11 @@ const express = require('express')
 const mailer = require('../mailer')
 const dataStore = require('../datastore')
 
+const VALID_NAMESPACES = [
+  'contact',
+  'merch'
+]
+
 const apiRouter = express.Router()
 
 apiRouter.get('/', (req, res) => {
@@ -14,15 +19,18 @@ apiRouter.post('/contact', (req, res) => {
     return res.status(400).send('email unprovided')
   }
 
-  if (!req.body.message || !req.body.message.length) {
-    return res.status(400).send('message unprovided')
+  let namespace = 'contact'
+
+  if (req.body.namespace && VALID_NAMESPACES.indexOf(req.body.namespace) !== -1) {
+    namespace = req.body.namespace
   }
 
-  dataStore.add('contact', {
-    email: req.body.email,
-    message: req.body.message,
-    timestamp: new Date().toString()
-  }).then(() => {
+  const fields = JSON.parse(JSON.stringify(req.body)),
+        data = Object.assign(fields, {
+          timestamp: new Date().toString()
+        })
+
+  dataStore.add(namespace, data).then(() => {
     res.send('Message sent successfully')
   }).catch((err) => {
     console.error(err)

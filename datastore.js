@@ -28,7 +28,11 @@ const dataStore = {
             }
 
             loadedFileContents.push(data)
-            resolve()
+            this.save(filename, loadedFileContents).then(() => {
+              resolve()
+            }).catch((err) => {
+              reject(err)
+            })
           })
         }
 

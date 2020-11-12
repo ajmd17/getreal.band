@@ -177,6 +177,28 @@ function renderIndexPage(req, res, next, { urlComponents, partialName, paramsStr
         pageTitle: 'Lyrics',
         metaDescription: 'View lyrics to songs by Get Real!'
       }
+    } else if (page === 'merch') {
+      let itemContent = 'Buy Get Real! band merchandise',
+          pageTitle = 'Get Real! Merch'
+
+      if (params.length > 0) {
+        let item = require('./data/merch.json').find(obj => obj.slug == params[0])
+
+        if (item != null) {
+          try {
+            itemContent = htmlToText.fromString(util.renderMarkdownFile(path.join(__dirname, 'data', 'merch', item.slug + '.md')))
+          } catch (err) {
+            // no-op
+          }
+
+          pageTitle += ' - ' + item.title
+        }
+      }
+
+      return {
+        pageTitle: 'Merch',
+        metaDescription: util.truncate(itemContent.trim().replace(/\n+/g, ' / '), 250)
+      }
     } else if (page === 'contact') {
       return {
         pageTitle: 'Contact Us',
@@ -195,6 +217,7 @@ function renderIndexPage(req, res, next, { urlComponents, partialName, paramsStr
       params
     }), (err, contentStr) => {
       if (err) {
+        console.error('Failed to render partial ' + partialName + ': ', err)
         next()
 
         return

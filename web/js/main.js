@@ -149,7 +149,8 @@ function registerContactFormSubmission() {
 
   contactButton.addEventListener('click', function () {
     var emailBox = document.getElementById('email-box'),
-      messageBox = document.getElementById('message-box'),
+      otherFields = {},
+      contactForm = document.getElementById('contact-form'),
       contactFormErrors = document.getElementById('contact-form-errors')
       errors = []
 
@@ -161,8 +162,19 @@ function registerContactFormSubmission() {
       errors.push('Please enter a valid email address')
     }
 
-    if (messageBox.value.trim().length == 0) {
-      errors.push("You're shooting blanks!")
+    contactForm.querySelectorAll('[data-form-field]').forEach((element) => {
+      otherFields[element.getAttribute('name')] = {
+        value: element.value,
+        required: element.dataset.formField === 'required'
+      }
+    })
+
+    if (Object.keys(otherFields).length > 0) {
+      Object.keys(otherFields).forEach((key) => {
+        if (otherFields[key].required && (!otherFields[key].value || otherFields[key].value.trim().length === 0)) {
+          errors.push('The ' + key + ' field is required.')
+        }
+      })
     }
 
     if (errors.length != 0) {
@@ -175,10 +187,15 @@ function registerContactFormSubmission() {
       return
     }
 
-    HTTP.post('/api/contact', {
-      email: emailBox.value,
-      message: messageBox.value
-    }, function (err, result) {
+    let postData = {
+      email: emailBox.value
+    }
+
+    Object.keys(otherFields).forEach((key) => {
+      postData[key] = otherFields[key].value
+    })
+
+    HTTP.post('/api/contact', postData, function (err, result) {
       if (err) {
         contactFormErrors.innerHTML ='<div><i class="fas fa-exclamation-triangle"></i>&nbsp;' + err.message + '</div>'
         contactFormErrors.style.display = 'block'

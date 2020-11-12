@@ -6,9 +6,33 @@
   </url>
 
   <url>
+    <loc>https://getreal.band/merch</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://getreal.band/merch/seasick-hotel-cd</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
     <loc>https://getreal.band/releases</loc>
     <changefreq>daily</changefreq>
     <priority>0.95</priority>
+  </url>
+
+  <url>
+    <loc>https://getreal.band/releases/my-haunting</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://getreal.band/releases/seasick-hotel</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
   </url>
 
   <url>

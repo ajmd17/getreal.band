@@ -1,0 +1,36 @@
+<% if (params.length !== 0) { %>
+  <%- include('./merch/_merch.ejs') %>
+
+<% } else { %>
+  <section data-nosidebar>
+    <% merchItems.forEach((item, index) => { %>
+      <article id="<%= item.slug %>" class="blogpost blogpost--preview">
+        <h1>
+          <a href="/merch/<%= item.slug %>">
+            <%= item.title %>
+          </a>
+          <a class="hash-link" href="/merch#<%= item.slug %>">#</a>
+        </h1>
+
+        <div class="blogpost__content">
+          <% if (item.previewImg) { %>
+            <div class="blogpost__preview">
+              <img src="/images/<%= item.slug %>/<%= item.previewImg %>"></img>
+            </div>
+          <% } %>
+
+          <div class="blogpost__body">
+            <%- util.getTruncatedContent(util.renderMarkdownFile('data/merch/' + item.slug + '.md')) %>
+
+            <a href="/merch/<%= item.slug %>">
+              Read more
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+    <% }) %>
+  </section>
+<% } %>

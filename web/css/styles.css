@@ -116,8 +116,13 @@ body {
   margin-left: 30px;
 }
 
-.upcoming {
+.upcoming,
+a.accent {
   color: #f65912;
+}
+
+a.accent {
+  text-decoration: underline !important;
 }
 
 .video-section {
@@ -455,7 +460,7 @@ article.blogpost a:not(.disabled):not(.blog-nav-link):not(.hash-link):hover {
   width: 100%;
   position: relative;
 }
-.contact-form .form-bottom button {
+.button {
   outline: none;
   border: none;
   border-radius: 5px;
@@ -466,6 +471,11 @@ article.blogpost a:not(.disabled):not(.blog-nav-link):not(.hash-link):hover {
   color: #fff;
   font-family: 'Oswald', sans-serif;
   text-transform: uppercase;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+.button:hover {
+  background: #789BEA;
 }
 
 .albums {
@@ -476,7 +486,6 @@ article.blogpost a:not(.disabled):not(.blog-nav-link):not(.hash-link):hover {
   margin: 0;
   display: flex;
   flex-direction: row;
-
 }
 .albums .album-carousel li {
   flex: 1;
@@ -513,6 +522,14 @@ article.blogpost a:not(.disabled):not(.blog-nav-link):not(.hash-link):hover {
   letter-spacing: -0.03em;
   margin-bottom: 40px;
   box-shadow: 0 0 20px -1px rgba(0,0,0,0.2);
+}
+
+.albums .album .album__header {
+  display: flex;
+  flex-direction: row;
+}
+.albums .album .album__title {
+  flex: 1;
 }
 .albums .album h1 {
   margin: 0;
@@ -781,14 +798,9 @@ article.blogpost .hash-link:hover {
   text-decoration: none;
 }
 article.blogpost--full {
+  overflow: auto;
 }
 article.blogpost--preview {
-  /* position: absolute; */
-  /* z-index: 2; */
-  /* right: 0; */
-  /* bottom: 0; */
-  /* left: 0; */
-  /* height: 100%; */
   background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(247, 248, 250, 0.9), 100%);
 
 }
@@ -811,6 +823,21 @@ article.blogpost--preview .read-more-btn:hover {
 article.blogpost .bottom-links {
   font-size: 0.7em;
 }
+
+article.blogpost .blogpost__content {
+  display: flex;
+  flex-direction: row;
+}
+article.blogpost .blogpost__body {
+  flex: 1;
+}
+article.blogpost .blogpost__preview {
+  margin-right: 20px;
+}
+article.blogpost .blogpost__preview > img {
+  width: 250px;
+}
+
 
 @media (max-width: 1300px) {
   /* #lander-img {
@@ -846,6 +873,8 @@ article.blogpost .bottom-links {
 }
 
 @media (max-width: 768px) {
+
+
   #nav-logo img.logo {
     max-width: 200px;
   }

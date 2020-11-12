@@ -1,5 +1,6 @@
 const fs = require('fs')
 const path = require('path')
+const htmlToText = require('html-to-text')
 const md = require('markdown-it')({
   html: true,
   breaks: true
@@ -62,6 +63,10 @@ module.exports = {
 
   getBlogpostDescription(blogpost) {
     return blogpost.description || this.truncate(blogpost.content, 150)
+  },
+
+  getTruncatedContent(content, length = 250) {
+    return this.truncate(htmlToText.fromString(content), length)
   },
 
   playLinkIcon(channel) {

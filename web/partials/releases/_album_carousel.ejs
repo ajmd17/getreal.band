@@ -5,6 +5,12 @@
       <a href="/releases/<%= release.slug %>" class="<%= selected ? 'selected' : '' %>">
         <img src="/images/releases/<%= release.artwork %>" alt="<%= release.title %> by Get Real band" />
         <span class="link"><%= release.title %></span>
+
+        <% if (release.merch) { %>
+          <a class="accent" href="/merch/<%= release.merch %>">
+            Physical options available!
+          </a>
+        <% } %>
       </a>
     </li>
   <% }) %>

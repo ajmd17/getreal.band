@@ -1,9 +1,20 @@
 <div class="album">
   <% var release = releases.find(r => r.slug === params[0]) || releases[0] %>
 
-  
-  <h1><%= release.title %></h1>
-  <h4><%= release.released %></h4>
+  <div class="album__header">
+    <div class="album__title">
+      <h1><%= release.title %></h1>
+      <h4><%= release.released %></h4>
+    </div>
+    <div class="album__actions">
+      <% if (release.merch) { %>
+        <a href="/merch/<%= release.merch %>" class="button">
+          <i class="fas fa-compact-disc fa-fw"></i>
+          Physical copies available
+        </a>
+      <% } %>
+    </div>
+  </div>
   <hr/>
   <div class="split-pane">
     <div class="album-artwork">

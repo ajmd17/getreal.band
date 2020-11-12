@@ -20,6 +20,7 @@
     "slug": "seasick-hotel",
     "released": "September 8, 2020",
     "artwork": "sh.jpg",
+    "merch": "seasick-hotel-cd",
     "tracks": [
       { "title": "The Motions", "slug": "the-motions" },
       { "title": "Makes Me Sick", "slug": "makes-me-sick" },

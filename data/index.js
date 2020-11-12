@@ -36,5 +36,14 @@ module.exports = {
     obj.contentText = htmlToText.fromString(obj.content)
 
     return obj
+  }),
+  merchItems: require('./merch.json').map((item) => {
+    let obj = Object.assign({
+      content: util.renderMarkdownFile(path.join(__dirname, 'merch', item.slug + '.md'))
+    }, item)
+
+    obj.contentText = htmlToText.fromString(obj.content)
+
+    return obj
   })
 }
