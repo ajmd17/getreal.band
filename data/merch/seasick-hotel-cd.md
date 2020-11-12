@@ -1,5 +1,5 @@
 
-![Physical CD copies](/images/seasick-hotel-cd/cd2.jpg "Physical CD copies"){.align-img-left.mobile-no-align}{width=200}
+![Physical CD copies](/images/seasick-hotel-cd/cd2.jpg "Physical CD copies"){.align-img-left .mobile-no-align}{width=200}
 
 Our first full-length album Seasick Hotel was released on September 8th (2020) and we're pleased to say that we have physical CD copies available! They come in a CD jacket complete with original artwork by [@crowsomen](https://instagram.com/crowsomen).
 
