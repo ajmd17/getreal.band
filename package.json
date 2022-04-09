@@ -25,7 +25,7 @@
     "markdown-it-attrs": "^3.0.1",
     "markdown-it-video": "^0.6.3",
     "marked": "^0.7.0",
-    "moment": "^2.27.0",
+    "moment": "^2.29.2",
     "nodemailer": "^2.0.0"
   }
 }
